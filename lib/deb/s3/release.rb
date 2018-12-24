@@ -125,6 +125,7 @@ class Deb::S3::Release
       end
     else
       # remove an existing Release.gpg, if it was there
+      puts "No Signing key was provided #{Deb::S3::Utils.signing_key}"
       s3_remove(self.filename+".gpg")
     end
 
